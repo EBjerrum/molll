@@ -77,7 +77,7 @@ class BaseLL(ABC):
         "Method that calculates LL for"
 
     @abstractmethod
-    def fit(self, mols: Iterable[Chem.Mol]) -> None:
+    def analyze_dataset(self, mols: Iterable[Chem.Mol]) -> None:
         "Gather statistics from the list of molecules"
 
     def calculate_lls(self, mols: List[Chem.Mol]) -> List[float]:
@@ -86,7 +86,7 @@ class BaseLL(ABC):
 
 # %%
 class AtomLL(BaseLL):
-    def fit(self, mols: Iterable[Chem.Mol]) -> None:
+    def analyze_dataset(self, mols: Iterable[Chem.Mol]) -> None:
         self._key_data = Counter()
         for mol in mols:
             self._key_data.update(self._get_fp(mol))
@@ -128,7 +128,7 @@ class AtomLL(BaseLL):
 
 
 class MolLL(BaseLL):
-    def fit(self, mols: Iterable[Chem.Mol]) -> None:
+    def analyze_dataset(self, mols: Iterable[Chem.Mol]) -> None:
         self._key_data = defaultdict(
             lambda: Counter()
         )  # We always get a counter, but if no key and empty counter we get a zero back.

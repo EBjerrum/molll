@@ -40,7 +40,7 @@ class PropLL:
         kde = KernelDensity(bandwidth=self.bandwidth)
         self._pipeline = make_pipeline(featurizer, scaler, kde)
 
-    def fit(self, mols: Iterable[Chem.Mol]) -> None:
+    def analyze_dataset(self, mols: Iterable[Chem.Mol]) -> None:
         "Gather statistics from the list of molecules"
         self._pipeline.fit(mols)
 
