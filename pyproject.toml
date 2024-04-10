@@ -1,0 +1,59 @@
+[build-system]
+requires = [
+  "setuptools >= 64",
+  "setuptools_scm[toml]>=6.2",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+write_to = "molll/_version.py"
+version_scheme = "post-release"
+
+
+[project]
+name = "molll"
+authors = [
+    {name = "Esben Jannik Bjerrum"},
+]
+description = "Log likelihood estimation of molecules."
+keywords = ["probability", "molecule", "chemistry"]
+readme = "README.md"
+requires-python = ">=3.7"
+license = {file = "LICENSE"}
+dynamic = ["version"]  # version is set from git tags
+
+dependencies = [
+  "rdkit",
+  "scikit-mol"
+]
+
+#[project.optional-dependencies]
+#dev = [
+#  "pytest",
+#]
+
+[project.urls]
+Homepage = "https://github.com/EBjerrum/molll"
+Repository = "https://github.com/EBjerrum/molll.git"
+
+
+[tool.setuptools]
+packages = ["molll"]
+
+
+[tool.pytest.ini_options]
+addopts = [
+  "-v",
+]
+
+[tool.coverage.run]
+source = ["molll"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "pragma: no cover",
+  "raise NotImplementedError",
+  "if TYPE_CHECKING:",
+  "if MYPY:",
+  "^\\s+[.][.][.]$",
+]
