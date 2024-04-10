@@ -11,7 +11,7 @@ version_scheme = "post-release"
 
 
 [project]
-name = "molll"
+name = "molecule_ll"
 authors = [
     {name = "Esben Jannik Bjerrum"},
 ]
