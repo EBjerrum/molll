@@ -4,10 +4,10 @@ This software provides models for estimating the likelihood of a molecule belong
 
 ## Installation
 
-Clone and install directly from the main directory:
+Installed tagged release from PyPI
 
 ```bash
-pip install .
+pip install molecule_ll
 ```
 
 or directly from the repository without cloning:
@@ -16,7 +16,13 @@ or directly from the repository without cloning:
 pip install git+https://github.com/EBjerrum/molll.git
 ```
 
-(PyPI package is underway)
+If you want to tinker and contribute, then clone and install in editable mode:
+
+```bash
+git clone git@github.com:EBjerrum/molll.git # Or you fork on GitHub
+cd molll
+pip install -e .
+```
 
 ## Usage
 
